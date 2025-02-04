@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1E3A8A;
+  --color-secondary: #C7A462;
+  --color-accent: #F3CC30;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-[#1E3A8A] text-white hover:bg-[#152C6B];
+  }
+
+  .btn-secondary {
+    @apply bg-[#C7A462] text-white hover:bg-[#B08E4A];
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#1E3A8A] text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .heading-primary {
+    @apply text-4xl md:text-5xl font-bold text-gray-900;
+  }
+
+  .heading-secondary {
+    @apply text-3xl md:text-4xl font-bold text-gray-800;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
